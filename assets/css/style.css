@@ -170,7 +170,8 @@ p.lead { font-size: 1.15rem; color: var(--white); font-weight: 300; }
    content's intrinsic min-width (default min-width:auto on grid/flex items) */
 .food-row > *, .about-grid > *, .contact-grid > *, .night-grid > *,
 .cocktail-grid > *, .footer-grid > *, .menu-items > *, .featured-grid > *,
-.contact-actions > *, .hero-actions > *, .btn-row > *, .order-modal-actions > * {
+.contact-actions > *, .hero-actions > *, .btn-row > *, .order-modal-actions > *,
+.menu-photo-grid > * {
   min-width: 0;
 }
 
@@ -1132,6 +1133,56 @@ body.order-modal-open { overflow: hidden; }
   .order-modal-panel { padding: 38px 24px 32px; border-radius: 20px; }
   .order-modal-actions { grid-template-columns: 1fr; gap: 14px; }
   .order-modal-btn { flex-direction: row; justify-content: center; padding: 20px 16px; }
+}
+
+/* ==========================================================================
+   PHOTO FEATURE BANDS — real restaurant photography
+   ========================================================================== */
+.photo-feature {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-pink-deep);
+  line-height: 0;
+}
+.photo-feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-home { height: min(82vh, 820px); min-height: 460px; }
+.photo-home img { object-position: 36% 30%; }
+
+.photo-gallery { height: clamp(260px, 34vw, 420px); }
+.photo-gallery img { object-position: center 38%; }
+
+.photo-about { height: clamp(260px, 34vw, 420px); }
+.photo-about img { object-position: 40% 35%; }
+
+.menu-photo-band { padding: 70px 0; }
+.menu-photo-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+.menu-photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  height: clamp(240px, 26vw, 420px);
+  border: 1px solid rgba(23,230,200,.25);
+}
+.menu-photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.menu-photo-item.item-menu img { object-position: center 42%; }
+.menu-photo-item.item-flavor img { object-position: center 45%; }
+
+@media (max-width: 980px) {
+  .menu-photo-grid { grid-template-columns: 1fr; }
+  .menu-photo-item { height: clamp(220px, 50vw, 340px); }
+}
+
+@media (max-width: 720px) {
+  .photo-home { height: auto; min-height: 0; aspect-ratio: 1024 / 1536; }
+  .photo-home img { object-position: 40% 22%; }
+  .photo-gallery, .photo-about { height: clamp(220px, 62vw, 320px); }
+  .menu-photo-band { padding: 40px 0; }
 }
 
 /* ==========================================================================
