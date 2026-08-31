@@ -163,7 +163,7 @@ p.lead { font-size: 1.15rem; color: var(--white); font-weight: 300; }
 /* prevent grid/flex items from forcing horizontal overflow at their
    content's intrinsic min-width (default min-width:auto on grid/flex items) */
 .food-row > *, .about-grid > *, .contact-grid > *, .night-grid > *,
-.cocktail-grid > *, .footer-grid > *, .menu-items > *,
+.cocktail-grid > *, .footer-grid > *, .menu-items > *, .featured-grid > *,
 .contact-actions > *, .hero-actions > *, .btn-row > * {
   min-width: 0;
 }
@@ -862,6 +862,58 @@ section { position: relative; }
 .menu-item p { margin: 0; font-size: .88rem; }
 .menu-item .tag { display: inline-block; margin-top: 8px; font-size: .64rem; letter-spacing: .08em; color: var(--teal); text-transform: uppercase; border: 1px solid rgba(23,230,200,.3); padding: 3px 10px; border-radius: 999px; }
 
+/* subsections inside a single category, e.g. Traditional Wings / Boneless Wings / Tacos */
+.menu-subhead {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: .1em;
+  color: var(--teal);
+  margin: 56px 0 26px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(23,230,200,.25);
+}
+.menu-subhead:first-of-type { margin-top: 4px; }
+
+/* MOST ORDERED — featured/premium presentation */
+.menu-featured {
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 10%, rgba(255,31,156,.08), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 90%, rgba(23,230,200,.06), transparent 55%);
+  border-top: 1px solid rgba(255,31,156,.22);
+  border-bottom: 1px solid rgba(255,31,156,.22);
+}
+.featured-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.featured-card {
+  position: relative;
+  padding: 28px 26px 24px;
+  border-radius: 10px;
+  background: linear-gradient(160deg, rgba(255,31,156,.07), rgba(10,8,10,.6) 60%);
+  border: 1px solid rgba(255,31,156,.3);
+  box-shadow: 0 0 0 rgba(255,31,156,0);
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
+}
+.featured-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--pink);
+  box-shadow: 0 18px 44px rgba(255,31,156,.22), 0 0 0 1px rgba(23,230,200,.2) inset;
+}
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .62rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--teal);
+  border: 1px solid rgba(23,230,200,.4);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.featured-badge::before { content: '\2726'; color: var(--pink); }
+.featured-card .menu-item-top h4 { font-size: 1.3rem; }
+
 .menu-note {
   margin-top: 60px;
   text-align: center;
@@ -1009,6 +1061,7 @@ section { position: relative; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
   .menu-items { grid-template-columns: 1fr; }
+  .featured-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 720px) {
