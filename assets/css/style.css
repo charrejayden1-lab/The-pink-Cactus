@@ -1,6 +1,6 @@
 /* ==========================================================================
    THE PINK CACTUS — core stylesheet
-   Black / Hot Pink / Teal — upscale nightlife lounge aesthetic
+   Black / Hot Pink / Teal — upscale restaurant, lounge-inspired aesthetic
    ========================================================================== */
 
 :root {
@@ -619,7 +619,7 @@ section { position: relative; }
 .cocktail-cta { margin-top: 60px; text-align: center; }
 
 /* ==========================================================================
-   NIGHTLIFE
+   ATMOSPHERE
    ========================================================================== */
 .night-section {
   background: linear-gradient(165deg, var(--surface-pink-mid) 0%, var(--surface-pink-deep) 100%);
