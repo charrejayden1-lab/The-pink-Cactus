@@ -711,7 +711,17 @@ section { position: relative; }
 /* ==========================================================================
    MAP
    ========================================================================== */
-.map-section { background: linear-gradient(180deg, var(--surface-pink-mid), var(--surface-pink-deep)); padding: 120px 0 0; }
+.map-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+  padding: 90px 0 610px;
+  background: linear-gradient(180deg, var(--surface-pink-mid), var(--surface-pink-deep));
+}
+.map-hero .container { position: relative; z-index: 2; }
+.map-hero .page-hero-photo { object-position: center 24%; }
+.map-section { background: linear-gradient(180deg, var(--surface-pink-mid), var(--surface-pink-deep)); padding: 0 0 60px; }
 .map-head { text-align: center; margin-bottom: 50px; }
 .map-wrap {
   position: relative;
@@ -761,7 +771,7 @@ section { position: relative; }
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
-.footer-brand img { height: 136px; margin-bottom: 18px; filter: drop-shadow(0 0 18px rgba(255,31,156,.3)); }
+.footer-brand img { height: 136px; width: auto; margin-bottom: 18px; filter: drop-shadow(0 0 18px rgba(255,31,156,.3)); }
 .footer-brand p { max-width: 300px; font-size: .9rem; }
 .footer-col h4 {
   font-family: var(--font-body);
@@ -1169,11 +1179,13 @@ body.order-modal-open { overflow: hidden; }
 .page-hero--flavor.has-photo { padding: 100px 0 110px; }
 .page-hero--gallery.has-photo,
 .page-hero--about.has-photo { padding: calc(var(--header-h) + 140px) 0 140px; }
+.page-hero--contact.has-photo { padding: calc(var(--header-h) + 56px) 0 620px; }
 
 .page-hero--menu .page-hero-photo { object-position: center 34%; }
 .page-hero--flavor .page-hero-photo { object-position: center 40%; }
 .page-hero--gallery .page-hero-photo { object-position: center 32%; }
 .page-hero--about .page-hero-photo { object-position: 42% 30%; }
+.page-hero--contact .page-hero-photo { object-position: center 20%; }
 
 @media (max-width: 980px) {
   .page-hero--menu .page-hero-photo { object-position: 66% 32%; }
@@ -1184,11 +1196,16 @@ body.order-modal-open { overflow: hidden; }
   .page-hero--flavor.has-photo { padding: 76px 0 82px; }
   .page-hero--gallery.has-photo,
   .page-hero--about.has-photo { padding: calc(var(--header-h) + 96px) 0 96px; }
+  .page-hero--contact.has-photo { padding: calc(var(--header-h) + 30px) 0 250px; }
 
   .page-hero--menu .page-hero-photo { object-position: 70% 30%; }
   .page-hero--flavor .page-hero-photo { object-position: center 32%; }
   .page-hero--gallery .page-hero-photo { object-position: center 24%; }
   .page-hero--about .page-hero-photo { object-position: 38% 22%; }
+  .page-hero--contact .page-hero-photo { object-position: center top; }
+
+  .map-hero { padding: 46px 0 270px; }
+  .map-hero .page-hero-photo { object-position: center top; }
 }
 
 /* ==========================================================================
@@ -1226,10 +1243,18 @@ body.order-modal-open { overflow: hidden; }
   .section { padding: 90px 0; }
   .masonry { column-count: 2; }
   .cocktail-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 34px; text-align: left; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .site-footer { padding: 50px 0 22px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 26px; padding-bottom: 30px; text-align: left; }
+  .footer-brand img { height: 62px; margin-bottom: 12px; }
+  .footer-brand p { max-width: none; margin: 0 0 4px; }
+  .footer-social { margin-top: 12px; }
+  .footer-col h4 { margin-bottom: 12px; }
+  .footer-col ul li { margin-bottom: 8px; }
+  .footer-nav-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; row-gap: 8px; }
+  .footer-nav-list li { margin-bottom: 0; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; padding-top: 18px; gap: 8px; }
   .sticky-actions { display: block; }
-  body { padding-bottom: 82px; }
+  body { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
   .map-frame-outer { height: 380px; }
   .map-overlay-card { left: 16px; right: 16px; bottom: 16px; max-width: none; padding: 20px; }
   .contact-actions { grid-template-columns: 1fr; }
