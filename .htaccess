@@ -1,0 +1,21 @@
+Options -MultiViews
+RewriteEngine On
+
+# Allow /menu, /gallery, /about, /contact, /home to resolve without .html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^menu/?$ menu.html [L]
+RewriteRule ^gallery/?$ gallery.html [L]
+RewriteRule ^about/?$ about.html [L]
+RewriteRule ^contact/?$ contact.html [L]
+RewriteRule ^home/?$ index.html [L]
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>

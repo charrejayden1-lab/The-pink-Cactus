@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The sitemap protocol requires absolute URLs. Replace
+  https://REPLACE-WITH-YOUR-DOMAIN.com below with the live production
+  domain before submitting this file to Google Search Console / Bing
+  Webmaster Tools.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/index.html</loc></url>
-  <url><loc>/menu.html</loc></url>
-  <url><loc>/gallery.html</loc></url>
-  <url><loc>/about.html</loc></url>
-  <url><loc>/contact.html</loc></url>
+  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/index.html</loc></url>
+  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/menu.html</loc></url>
+  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/gallery.html</loc></url>
+  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/about.html</loc></url>
+  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN.com/contact.html</loc></url>
 </urlset>

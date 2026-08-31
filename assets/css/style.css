@@ -30,7 +30,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
 
 body {
   margin: 0;
@@ -118,7 +118,8 @@ p.lead { font-size: 1.15rem; color: var(--white); font-weight: 300; }
   font-size: .82rem;
   border: 1px solid transparent;
   transition: transform .45s var(--ease), box-shadow .45s var(--ease), background .45s var(--ease), border-color .45s var(--ease), color .45s var(--ease);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
 }
 .btn:active { transform: scale(.97); }
 
@@ -158,6 +159,14 @@ p.lead { font-size: 1.15rem; color: var(--white); font-weight: 300; }
 .btn-sm { padding: 12px 26px; font-size: .74rem; }
 
 .btn-row { display: flex; flex-wrap: wrap; gap: 16px; }
+
+/* prevent grid/flex items from forcing horizontal overflow at their
+   content's intrinsic min-width (default min-width:auto on grid/flex items) */
+.food-row > *, .about-grid > *, .contact-grid > *, .night-grid > *,
+.cocktail-grid > *, .footer-grid > *, .menu-items > *,
+.contact-actions > *, .hero-actions > *, .btn-row > * {
+  min-width: 0;
+}
 
 /* ==========================================================================
    HEADER
@@ -1018,12 +1027,15 @@ section { position: relative; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
   .night-copy { padding: 60px 24px; }
+  .contact-card { padding: 36px 28px; }
 }
 
 @media (max-width: 520px) {
   .cocktail-grid { grid-template-columns: 1fr; }
   .masonry { column-count: 1; }
   .container { padding: 0 20px; }
+  .contact-card { padding: 28px 20px; }
+  .btn { padding: 15px 26px; }
 }
 
 /* reduced motion */
