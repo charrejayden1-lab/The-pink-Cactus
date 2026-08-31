@@ -111,6 +111,39 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
   }
 
+  /* order online modal */
+  var orderModal = document.querySelector('.order-modal');
+  if (orderModal) {
+    var orderModalClose = orderModal.querySelector('.order-modal-close');
+    var orderModalLastFocus = null;
+
+    function openOrderModal(e) {
+      if (e) e.preventDefault();
+      orderModalLastFocus = document.activeElement;
+      orderModal.classList.add('is-open');
+      body.classList.add('order-modal-open');
+      if (orderModalClose) orderModalClose.focus();
+    }
+    function closeOrderModal() {
+      orderModal.classList.remove('is-open');
+      body.classList.remove('order-modal-open');
+      if (orderModalLastFocus && typeof orderModalLastFocus.focus === 'function') {
+        orderModalLastFocus.focus();
+      }
+    }
+
+    document.querySelectorAll('[data-order-modal]').forEach(function (el) {
+      el.addEventListener('click', openOrderModal);
+    });
+    if (orderModalClose) orderModalClose.addEventListener('click', closeOrderModal);
+    orderModal.addEventListener('click', function (e) {
+      if (e.target === orderModal) closeOrderModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && orderModal.classList.contains('is-open')) closeOrderModal();
+    });
+  }
+
   /* menu page: scrollspy + smooth jump */
   var menuNavLinks = document.querySelectorAll('.menu-nav a');
   var menuSections = document.querySelectorAll('.menu-category');
