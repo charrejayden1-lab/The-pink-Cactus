@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1150" role="img" aria-labelledby="pcLogoTitle">
+  <title id="pcLogoTitle">The Pink Cactus - Mexican Food &amp; Drinks - Waukegan, IL</title>
+  <defs>
+    <radialGradient id="duskSky" cx="50%" cy="60%" r="70%">
+      <stop offset="0%" stop-color="#ffd25c"/>
+      <stop offset="35%" stop-color="#ff8a3d"/>
+      <stop offset="65%" stop-color="#ff3f7e"/>
+      <stop offset="100%" stop-color="#7a1450"/>
+    </radialGradient>
+    <linearGradient id="bodyPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5fbf"/>
+      <stop offset="100%" stop-color="#e8199a"/>
+    </linearGradient>
+    <linearGradient id="hatPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5fbf"/>
+      <stop offset="100%" stop-color="#d80e82"/>
+    </linearGradient>
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe9ad"/>
+      <stop offset="45%" stop-color="#e8b84b"/>
+      <stop offset="100%" stop-color="#b8842a"/>
+    </linearGradient>
+    <linearGradient id="pinkText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff8fd4"/>
+      <stop offset="55%" stop-color="#ff2fa1"/>
+      <stop offset="100%" stop-color="#b80f6d"/>
+    </linearGradient>
+    <clipPath id="badgeClip"><circle cx="500" cy="430" r="345"/></clipPath>
+  </defs>
+
+  <!-- string lights ring -->
+  <g fill="#ffd35c" stroke="#b8842a" stroke-width="3">
+    <circle cx="500" cy="55" r="14"/>
+    <circle cx="647" cy="90" r="13"/>
+    <circle cx="763" cy="185" r="13"/>
+    <circle cx="825" cy="320" r="13"/>
+    <circle cx="825" cy="470" r="13"/>
+    <circle cx="175" cy="90" r="13"/>
+    <circle cx="237" cy="185" r="13"/>
+    <circle cx="175" cy="470" r="13"/>
+    <circle cx="353" cy="55" r="14"/>
+  </g>
+
+  <circle cx="500" cy="430" r="368" fill="none" stroke="url(#goldText)" stroke-width="10"/>
+  <circle cx="500" cy="430" r="345" fill="url(#duskSky)"/>
+
+  <g clip-path="url(#badgeClip)">
+    <g stroke="#ff9a56" stroke-width="4" opacity=".55">
+      <line x1="130" y1="260" x2="870" y2="260"/>
+      <line x1="130" y1="292" x2="870" y2="292"/>
+      <line x1="130" y1="324" x2="870" y2="324"/>
+      <line x1="130" y1="356" x2="870" y2="356"/>
+    </g>
+    <path d="M120 560 L260 420 L340 500 L440 380 L540 480 L640 400 L740 500 L880 560 L880 760 L120 760 Z" fill="#3a1030" opacity=".92"/>
+    <g fill="#2a0c24">
+      <rect x="185" y="430" width="18" height="120" rx="8"/>
+      <rect x="160" y="465" width="18" height="60" rx="8" transform="rotate(-30 169 495)"/>
+      <rect x="640" y="410" width="18" height="130" rx="8"/>
+      <rect x="672" y="450" width="18" height="60" rx="8" transform="rotate(30 681 480)"/>
+    </g>
+  </g>
+  <circle cx="500" cy="430" r="345" fill="none" stroke="#e8199a" stroke-width="3" opacity=".5"/>
+
+  <!-- agave leaves left/right -->
+  <g fill="#17c9ab">
+    <path d="M300 760 C260 720 210 715 175 750 C220 750 250 770 270 810 C285 785 296 772 300 760Z"/>
+    <path d="M300 760 C330 715 380 712 415 748 C372 748 342 765 322 800 C310 780 302 768 300 760Z"/>
+    <path d="M300 760 C285 715 300 675 340 660 C325 695 328 728 312 760Z"/>
+    <path d="M700 760 C660 720 610 715 575 750 C620 750 650 770 670 810 C685 785 696 772 700 760Z"/>
+    <path d="M700 760 C730 715 780 712 815 748 C772 748 742 765 722 800 C710 780 702 768 700 760Z"/>
+    <path d="M700 760 C685 715 700 675 740 660 C725 695 728 728 712 760Z"/>
+  </g>
+  <circle cx="330" cy="795" r="14" fill="#ff5fbf"/>
+  <circle cx="670" cy="795" r="14" fill="#ff5fbf"/>
+
+  <!-- cactus body -->
+  <g fill="url(#bodyPink)" stroke="#b80f6d" stroke-width="6" stroke-linejoin="round">
+    <path d="M440 330 C425 330 414 342 414 358 L414 700 C414 735 435 758 468 758 L532 758 C565 758 586 735 586 700 L586 358 C586 342 575 330 560 330 Z"/>
+    <path d="M414 470 C365 466 335 445 328 402 C324 384 330 366 348 358 C352 398 375 424 414 436 Z"/>
+    <path d="M586 500 C635 496 665 475 672 432 C676 414 670 396 652 388 C648 428 625 454 586 466 Z"/>
+  </g>
+
+  <!-- face -->
+  <g>
+    <ellipse cx="463" cy="440" rx="10" ry="14" fill="#2a0c24"/>
+    <ellipse cx="537" cy="440" rx="10" ry="14" fill="#2a0c24"/>
+    <path d="M440 418 q23 -22 40 -2" fill="none" stroke="#2a0c24" stroke-width="5" stroke-linecap="round"/>
+    <path d="M520 416 q23 -20 40 2" fill="none" stroke="#2a0c24" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="448" cy="468" r="12" fill="#ff9ad6" opacity=".7"/>
+    <circle cx="552" cy="468" r="12" fill="#ff9ad6" opacity=".7"/>
+    <path d="M470 480 Q500 505 530 480" fill="none" stroke="#2a0c24" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- margarita glass (left) -->
+  <g>
+    <path d="M300 470 L360 400 L420 470 Z" fill="#eafcef" opacity=".9" stroke="#17c9ab" stroke-width="4"/>
+    <circle cx="330" cy="440" r="16" fill="#8fe07a" stroke="#3a8f2f" stroke-width="3"/>
+    <line x1="360" y1="470" x2="360" y2="520" stroke="#e8b84b" stroke-width="6"/>
+    <path d="M414 500 C380 470 340 460 305 480" fill="none" stroke="url(#bodyPink)" stroke-width="26" stroke-linecap="round"/>
+  </g>
+
+  <!-- tequila bottle (right) -->
+  <g>
+    <rect x="655" y="365" width="46" height="90" rx="8" fill="#e8b84b" stroke="#8a5c18" stroke-width="4"/>
+    <rect x="668" y="340" width="20" height="30" rx="4" fill="#8a5c18"/>
+    <rect x="659" y="400" width="38" height="34" fill="#fff8e6" stroke="#8a5c18" stroke-width="2"/>
+    <text x="678" y="422" font-family="Georgia, serif" font-size="10" fill="#8a5c18" text-anchor="middle" font-weight="700">TEQ</text>
+    <path d="M586 500 C615 470 650 460 680 478" fill="none" stroke="url(#bodyPink)" stroke-width="26" stroke-linecap="round"/>
+  </g>
+
+  <!-- sombrero -->
+  <g>
+    <path d="M330 300 Q500 220 670 300 L695 348 Q500 280 305 348 Z" fill="url(#hatPink)" stroke="#b80f6d" stroke-width="5"/>
+    <ellipse cx="500" cy="298" rx="115" ry="66" fill="url(#hatPink)" stroke="#b80f6d" stroke-width="5"/>
+    <path d="M405 300 Q500 250 590 300" fill="none" stroke="#e8b84b" stroke-width="6"/>
+    <g fill="#17c9ab" opacity=".95">
+      <path d="M360 322 l34 6 -30 12 z"/>
+      <path d="M410 332 l34 6 -30 12 z"/>
+      <path d="M460 338 l34 4 -30 12 z"/>
+      <path d="M512 338 l34 -2 -28 12 z"/>
+      <path d="M562 332 l34 -6 -28 14 z"/>
+      <path d="M612 322 l32 -8 -26 16 z"/>
+    </g>
+    <path d="M395 330 Q500 372 605 330" fill="none" stroke="#e8b84b" stroke-width="6"/>
+  </g>
+
+  <!-- ribbon banner -->
+  <path d="M120 850 L880 850 L860 930 L500 970 L140 930 Z" fill="#0d0a0d" stroke="url(#goldText)" stroke-width="6"/>
+  <text x="500" y="905" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="46" letter-spacing="10" fill="url(#goldText)" text-anchor="middle">THE PINK</text>
+
+  <text x="500" y="1080" font-family="Georgia, 'Times New Roman', serif" font-weight="800" font-size="150" letter-spacing="4" fill="url(#pinkText)" stroke="url(#goldText)" stroke-width="3" text-anchor="middle">CACTUS</text>
+
+  <g fill="#17c9ab" opacity=".9">
+    <path d="M420 1000 q10 -30 40 -30 q-18 20 -14 44 q-18 -4 -26 -14Z"/>
+    <path d="M580 1000 q-10 -30 -40 -30 q18 20 14 44 q18 -4 26 -14Z"/>
+  </g>
+</svg>
