@@ -144,6 +144,86 @@
     });
   }
 
+  /* on the table: 3D coverflow carousel */
+  var coverflow = document.querySelector('[data-coverflow]');
+  if (coverflow) {
+    var cfStage = coverflow.querySelector('[data-coverflow-stage]');
+    var cfItems = Array.prototype.slice.call(coverflow.querySelectorAll('[data-coverflow-item]'));
+    var cfDots = Array.prototype.slice.call(coverflow.querySelectorAll('[data-coverflow-dot]'));
+    var cfPrev = coverflow.querySelector('[data-coverflow-prev]');
+    var cfNext = coverflow.querySelector('[data-coverflow-next]');
+    var cfTitle = coverflow.querySelector('[data-coverflow-title]');
+    var cfDesc = coverflow.querySelector('[data-coverflow-desc]');
+    var cfCount = cfItems.length;
+    var cfActive = 0;
+
+    function cfRender() {
+      cfItems.forEach(function (item, i) {
+        var raw = i - cfActive;
+        if (raw > cfCount / 2) raw -= cfCount;
+        if (raw < -cfCount / 2) raw += cfCount;
+        item.setAttribute('data-pos', String(raw));
+        item.setAttribute('aria-hidden', raw === 0 ? 'false' : 'true');
+        var card = item.querySelector('.coverflow-card');
+        if (card) card.tabIndex = raw === 0 ? 0 : -1;
+      });
+      cfDots.forEach(function (dot, i) {
+        var isActive = i === cfActive;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      var activeItem = cfItems[cfActive];
+      if (activeItem && cfTitle && cfDesc) {
+        cfTitle.textContent = activeItem.getAttribute('data-title') || '';
+        cfDesc.textContent = activeItem.getAttribute('data-desc') || '';
+      }
+    }
+
+    function cfGoTo(index) {
+      cfActive = ((index % cfCount) + cfCount) % cfCount;
+      cfRender();
+    }
+
+    if (cfPrev) cfPrev.addEventListener('click', function () { cfGoTo(cfActive - 1); });
+    if (cfNext) cfNext.addEventListener('click', function () { cfGoTo(cfActive + 1); });
+    cfDots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { cfGoTo(i); });
+    });
+    cfItems.forEach(function (item, i) {
+      var card = item.querySelector('.coverflow-card');
+      if (card) card.addEventListener('click', function () { cfGoTo(i); });
+    });
+
+    if (cfStage) {
+      cfStage.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); cfGoTo(cfActive - 1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); cfGoTo(cfActive + 1); }
+      });
+
+      var cfStartX = null;
+      var cfStartY = null;
+      var cfDragging = false;
+      cfStage.addEventListener('pointerdown', function (e) {
+        cfStartX = e.clientX;
+        cfStartY = e.clientY;
+        cfDragging = true;
+      });
+      cfStage.addEventListener('pointerup', function (e) {
+        if (!cfDragging || cfStartX === null) { cfDragging = false; return; }
+        var dx = e.clientX - cfStartX;
+        var dy = e.clientY - cfStartY;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+          if (dx < 0) cfGoTo(cfActive + 1); else cfGoTo(cfActive - 1);
+        }
+        cfDragging = false;
+        cfStartX = null;
+      });
+      cfStage.addEventListener('pointercancel', function () { cfDragging = false; cfStartX = null; });
+    }
+
+    cfRender();
+  }
+
   /* menu page: scrollspy + smooth jump */
   var menuNavLinks = document.querySelectorAll('.menu-nav a');
   var menuSections = document.querySelectorAll('.menu-category');
