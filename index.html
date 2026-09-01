@@ -203,30 +203,56 @@
         <p class="lead">Hand-shaken, top-shelf, and always a little extra. Stay for one more.</p>
       </div>
 
-      <div class="cocktail-grid">
-        <div class="cocktail-card reveal">
-          <div class="cc-inner">
-            <div class="cc-name">Margaritas</div>
-            <p class="cc-note">Classic, spicy, or fruit-forward — shaken fresh, salt optional.</p>
-          </div>
+      <div class="coverflow coverflow--drinks reveal" data-coverflow>
+        <div class="coverflow-stage" data-coverflow-stage tabindex="0" role="group" aria-roledescription="carousel" aria-label="The Bar drink gallery — use the arrow keys or swipe to browse">
+          <ul class="coverflow-track">
+            <li class="coverflow-item" data-coverflow-item data-index="0" data-title="The Cocktail Flight" data-desc="A trio of colorful house cocktails served flight-style with bold rimmed glasses.">
+              <button type="button" class="coverflow-card" data-coverflow-card aria-label="Show The Cocktail Flight">
+                <img src="assets/img/photos/01-drink-flight.png" alt="A flight of three colorful rimmed cocktails on a wooden board at The Pink Cactus bar" width="382" height="510" loading="lazy" decoding="async">
+              </button>
+            </li>
+            <li class="coverflow-item" data-coverflow-item data-index="1" data-title="Bold &amp; Bright Cocktails" data-desc="Vibrant pink and red house cocktails, each finished with a colorful rim and fresh garnish.">
+              <button type="button" class="coverflow-card" data-coverflow-card aria-label="Show Bold &amp; Bright Cocktails">
+                <img src="assets/img/photos/02-pink-red-drinks.png" alt="A pink and a red rimmed cocktail on a table at The Pink Cactus" width="382" height="510" loading="lazy" decoding="async">
+              </button>
+            </li>
+            <li class="coverflow-item" data-coverflow-item data-index="2" data-title="The Dessert Cocktail" data-desc="A dessert-inspired cocktail layered with whipped cream and a chocolate drizzle.">
+              <button type="button" class="coverflow-card" data-coverflow-card aria-label="Show The Dessert Cocktail">
+                <img src="assets/img/photos/03-dessert-cocktail.png" alt="A dessert cocktail topped with whipped cream and chocolate drizzle in a martini glass at The Pink Cactus" width="382" height="510" loading="lazy" decoding="async">
+              </button>
+            </li>
+            <li class="coverflow-item" data-coverflow-item data-index="3" data-title="The Patio Pour" data-desc="A tall citrus-orange house cocktail with a bold rim, garnished with a citrus wheel.">
+              <button type="button" class="coverflow-card" data-coverflow-card aria-label="Show The Patio Pour">
+                <img src="assets/img/photos/04-orange-cocktail.png" alt="A tall orange rimmed cocktail garnished with a citrus wheel on The Pink Cactus patio" width="383" height="510" loading="lazy" decoding="async">
+              </button>
+            </li>
+            <li class="coverflow-item" data-coverflow-item data-index="4" data-title="Cocktails For The Table" data-desc="A colorful lineup of house cocktails, garnished and ready for the table.">
+              <button type="button" class="coverflow-card" data-coverflow-card aria-label="Show Cocktails For The Table">
+                <img src="assets/img/photos/05-cocktail-table.png" alt="Three colorful garnished cocktails on a table at The Pink Cactus" width="287" height="510" loading="lazy" decoding="async">
+              </button>
+            </li>
+          </ul>
         </div>
-        <div class="cocktail-card reveal reveal-delay-1">
-          <div class="cc-inner">
-            <div class="cc-name">Mimosas</div>
-            <p class="cc-note">The brunch essential. Bubbly, bright, and endlessly refillable.</p>
-          </div>
+
+        <div class="coverflow-caption" data-coverflow-caption aria-live="polite">
+          <h3 class="coverflow-title" data-coverflow-title>The Cocktail Flight</h3>
+          <p class="coverflow-desc" data-coverflow-desc>A trio of colorful house cocktails served flight-style with bold rimmed glasses.</p>
         </div>
-        <div class="cocktail-card reveal reveal-delay-2">
-          <div class="cc-inner">
-            <div class="cc-name">Tequila</div>
-            <p class="cc-note">A curated tequila &amp; mezcal selection, sipped neat or in a flight.</p>
+
+        <div class="coverflow-controls">
+          <button type="button" class="coverflow-arrow prev" data-coverflow-prev aria-label="Previous drink">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="coverflow-dots" role="tablist" aria-label="Choose a drink" data-coverflow-dots>
+            <button type="button" class="coverflow-dot is-active" data-coverflow-dot="0" role="tab" aria-selected="true" aria-label="The Cocktail Flight"></button>
+            <button type="button" class="coverflow-dot" data-coverflow-dot="1" role="tab" aria-selected="false" aria-label="Bold &amp; Bright Cocktails"></button>
+            <button type="button" class="coverflow-dot" data-coverflow-dot="2" role="tab" aria-selected="false" aria-label="The Dessert Cocktail"></button>
+            <button type="button" class="coverflow-dot" data-coverflow-dot="3" role="tab" aria-selected="false" aria-label="The Patio Pour"></button>
+            <button type="button" class="coverflow-dot" data-coverflow-dot="4" role="tab" aria-selected="false" aria-label="Cocktails For The Table"></button>
           </div>
-        </div>
-        <div class="cocktail-card reveal reveal-delay-3">
-          <div class="cc-inner">
-            <div class="cc-name">Specialty Cocktails</div>
-            <p class="cc-note">Signature builds you won&rsquo;t find anywhere else in Waukegan.</p>
-          </div>
+          <button type="button" class="coverflow-arrow next" data-coverflow-next aria-label="Next drink">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
       </div>
 
